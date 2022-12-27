@@ -1,0 +1,141 @@
+@import-normalize; /* bring in normalize.css styles */
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+/* Header */
+.header {
+  padding-left: 30px;
+  font-size: 30px;
+  line-height: 3;
+  font-weight: 700;
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.75);
+}
+.headerLink {
+  color: black;
+  text-decoration: none;
+  &:not(:last-child) {
+    margin-right: 30px;
+  }
+  &.active {
+    color: brown;
+  }
+}
+
+/* style PageMovies */
+.goBackLink {
+  display: inline-block;
+  text-decoration: none;
+  padding: 10px;
+  margin: 35px;
+  font-size: 25px;
+  border-radius: 8px;
+  transition: scale 250ms linear;
+  color: black;
+  font-weight: 500;
+  box-shadow: 0px 0px 5px 2px rgba(0, 0, 0, 0.47);
+  &:hover {
+    color: red;
+    scale: 1.1;
+  }
+}
+.containerMovInfo {
+  padding-top: 50px;
+  padding-left: 35px;
+  display: flex;
+}
+.imageMovInfo {
+  width: 300px;
+  height: fit-content;
+  border: 1px solid transparent;
+  border-radius: 8px;
+}
+.containerMov {
+  width: 500px;
+  padding-left: 35px;
+}
+.textMov {
+  font-size: 20px;
+}
+/*PageMoviesLink */
+.containerMovLink {
+  display: inline-block;
+  padding-left: 38px;
+}
+
+/* Home */
+
+.homeTextInf {
+  padding-left: 35px;
+  color: black;
+  text-decoration: none;
+}
+.homeList {
+  font-size: 20px;
+  padding-top: 50px;
+}
+
+.homeItem {
+  list-style: none;
+  &:not(:last-child) {
+    margin-bottom: 15px;
+  }
+}
+
+.homeLink {
+  color: black;
+  text-decoration: none;
+  &:visited {
+    color: blueviolet;
+  }
+}
+/* MoviesForm */
+.containerForm {
+  padding: 35px;
+}
+.titleForm {
+  font-size: 25px;
+  font-weight: 500;
+}
+
+.inputForm {
+  line-height: 2;
+  font-size: 20px;
+  margin-right: 15px;
+  border-radius: 8px;
+}
+.buttonForm {
+  display: inline-block;
+  background-color: transparent;
+  border: none;
+  padding: 10px;
+  margin: 35px;
+  font-size: 25px;
+  border-radius: 8px;
+  transition: scale 250ms linear;
+  color: black;
+  font-weight: 500;
+  box-shadow: 0px 0px 5px 2px rgba(0, 0, 0, 0.47);
+  &:hover {
+    color: red;
+    scale: 1.1;
+  }
+}
+// Casta
+.castItem {
+  list-style: none;
+  margin: 10px;
+}
+.actorImg {
+  width: 150px;
+}
