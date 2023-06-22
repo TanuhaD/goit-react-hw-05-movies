@@ -12,20 +12,20 @@ const Home = () => {
       .then(({ data: { results } }) => {
         setMovies(results);
       })
-      .catch(error => {
-        setError(error);
-      })
+      .catch(error => setError(error))
       .finally(() => setLoading(false));
   }, []);
   return (
     <div>
       {loading && <p>Loading...</p>}
       {error && <p>{error.message}</p>}
-      {movies?.length === 0 && <p className="homeTextInf"> not find</p>}
+      {movies?.length === 0 && (
+        <p className="homeTextInf">Didn't find anything...</p>
+      )}
       {movies?.length > 0 && (
         <ul className="homeList">
           {movies.map(movie => (
-            <li key={movie.id} className="homeItem">
+            <li className="homeItem" key={movie.id}>
               <Link
                 className="homeLink"
                 to={`/movies/${movie.id}`}

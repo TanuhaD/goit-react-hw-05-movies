@@ -11,15 +11,19 @@ const Movies = () => {
   const query = searchParams.get('query') ?? '';
   const mount = useRef();
 
+  const fetchByQuery = q => {
+    setLoading(true);
+    fetchQuery(q)
+      .then(({ data: { results } }) => {
+        setMovies(results);
+      })
+      .catch(error => setError(error))
+      .finally(() => setLoading(false));
+  };
+
   useEffect(() => {
     if (!mount.current && query) {
-      setLoading(true);
-      fetchQuery(query)
-        .then(({ data: { results } }) => {
-          setMovies(results);
-        })
-        .catch(error => setError(error))
-        .finally(() => setLoading(false));
+      fetchByQuery(query);
     }
     mount.current = true;
   }, [query]);
@@ -32,13 +36,7 @@ const Movies = () => {
     evt.preventDefault();
     const query = searchParams.get('query') ?? '';
     if (!query) return;
-    setLoading(true);
-    fetchQuery(query)
-      .then(({ data: { results } }) => {
-        setMovies(results);
-      })
-      .catch(error => setError(error))
-      .finally(() => setLoading(false));
+    fetchByQuery(query);
   };
   return (
     <div className="containerForm">
